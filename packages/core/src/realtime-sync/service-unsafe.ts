@@ -269,13 +269,6 @@ export class UnsafeRealtimeSyncService extends Emittery<RealtimeSyncEvents> {
         ? "1 matched log"
         : `${matchedLogCount} matched logs`;
 
-    for (let log in matchedLogs) {
-      this.common.logger.debug({
-        service: "realtime",
-        msg: `Found ${logs.length} total and ${matchedLogCountText} in block ${log.b} (network=${this.network.name})`,
-      });
-    }
-
     // Filter transactions down to those that are required by the matched logs.
     // TODO: pick up here / finish
   };
@@ -308,7 +301,7 @@ export class UnsafeRealtimeSyncService extends Emittery<RealtimeSyncEvents> {
       });
 
       // First, check if the new block _might_ contain any logs that match the registered filters.
-      await this.findLogMatches();
+      // await this.findLogMatches();
       const isMatchedLogPresentInBlock = isMatchedLogInBloomFilter({
         bloom: newBlockWithTransactions.logsBloom!,
         logFilters: this.logFilters.map((l) => l.filter),
