@@ -17,7 +17,7 @@ Generally speaking, to solve the problem, you would implement something like the
   - Emit `realtimeCheckpoint` event
 - Additionally, processing tasks could be optimized to improve performance.
 
-## Final Thoughts
+## Additional Thoughts
 
 - Obviously this is a WIP and regrettably I'm not delivering any running code due to time constraints. Hopefully my understanding of the problem and solution, together with the small snippets of code added, can demonstrate my ability to tackle this problem.
-- One of my challenges with reworking the code was the fact that much of the business logic - e.g. in `blockTaskWorker()` - is "lumped together" rather than being broken out into individual functions. If I were undertaking this task for real, I would try to reorganize this code where appropriate into separate logical components that would make it faster and easier to develop/refactor.
+- One of my challenges with reworking the code was the fact that much of the business logic - e.g. in `blockTaskWorker()` - is sort of "lumped together" rather than being broken out into individual functions. If I were undertaking this task for real, I would try to reorganize this code where appropriate into separate logical components that would make it faster and easier to develop/refactor.
